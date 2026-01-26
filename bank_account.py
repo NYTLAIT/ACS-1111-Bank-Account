@@ -25,8 +25,14 @@ class BankAccount:
         print(f'Amount deposited: ${amount} New Balance: ${self.balance}')
 
     def withdraw(self, amount):
-        self.balance -= amount
-        print(f'Amount deposited: ${amount} New Balance: ${self.balance}')
+        if amount > self.balance:
+            self.balance -= amount
+            self.balance -= 10
+            print(f'Insufficient funds. Incured $10 overdraft fee')
+            print(f'Balance: {self.balance}')
+        else: 
+            self.balance -= amount
+            print(f'Amount deposited: ${amount} New Balance: ${self.balance}')
 
     def get_balance(self):
         print(f'Balance: {self.balance}')
@@ -47,3 +53,6 @@ example_account.deposit(50) # balance 150
 
 example_account.withdraw(25) # balance 125
 example_account.withdraw(5) # balance 120
+example_account.withdraw(140) # balance -30
+
+example_account.get_balance()
