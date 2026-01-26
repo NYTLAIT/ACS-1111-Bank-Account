@@ -45,15 +45,15 @@ class BankAccount:
         else:
             print('Get out of debt first')
 
-    def to_string(self):
-        print(f'Name: {self.full_name} Num: {self.account_number} Balance: {self.balance}')
+    def print_statement(self):
+        account_number_hidden = '****' + str(self.account_number)[-4:]
+        print(f'{self.full_name}')
+        print(f'Account No.: {account_number_hidden}')
+        print(f'Balance: ${round(self.balance, 2)}')
 
 # CHECK
 example_account = BankAccount('xamxam1')
 example_accounttoo = BankAccount('xamxam2')
-
-example_account.to_string()
-example_accounttoo.to_string()
 
 example_account.deposit(100) # balance 100
 example_account.deposit(50) # balance 150
@@ -64,7 +64,8 @@ example_account.withdraw(140) # balance -30
 
 example_account.get_balance() # balance -30
 
-example_account.add_interest()
+example_account.add_interest() # Get out of debt first
 example_account.deposit(80) # balance 50
-example_account.add_interest()
+example_account.add_interest() # balance 50.04
 
+example_account.print_statement()
