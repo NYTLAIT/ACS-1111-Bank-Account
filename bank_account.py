@@ -20,15 +20,19 @@ class BankAccount:
                 self.registered_accounts_num.append(number)
                 return int(number)
             
-    def deposit(self):
-
+    def deposit(self, amount):
+        self.balance += amount
+        print(f'Amount deposited: ${amount} New Balance: ${self.balance}')
 
     def to_string(self):
         print(f'Name: {self.full_name} Num: {self.account_number} Balance: {self.balance}')
 
-
+# CHECK
 example_account = BankAccount('xamxam1')
 example_account2 = BankAccount('xamxam2')
 
 example_account.to_string()
 example_account2.to_string()
+
+example_account.deposit(100)
+example_account.deposit(50)
