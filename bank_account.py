@@ -28,6 +28,10 @@ class BankAccount:
         self.balance -= amount
         print(f'Amount deposited: ${amount} New Balance: ${self.balance}')
 
+    def get_balance(self):
+        print(f'Balance: {self.balance}')
+        return self.balance
+
     def to_string(self):
         print(f'Name: {self.full_name} Num: {self.account_number} Balance: {self.balance}')
 
