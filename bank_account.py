@@ -35,8 +35,15 @@ class BankAccount:
             print(f'Amount deposited: ${amount} New Balance: ${self.balance}')
 
     def get_balance(self):
-        print(f'Balance: {self.balance}')
+        print(f'Balance: ${self.balance}')
         return self.balance
+    
+    def add_interest(self):
+        if self.balance > 0:
+            self.balance = self.balance * 1.00083
+            print(f'Balance: ${round(self.balance, 2)}')
+        else:
+            print('Get out of debt first')
 
     def to_string(self):
         print(f'Name: {self.full_name} Num: {self.account_number} Balance: {self.balance}')
@@ -55,4 +62,9 @@ example_account.withdraw(25) # balance 125
 example_account.withdraw(5) # balance 120
 example_account.withdraw(140) # balance -30
 
-example_account.get_balance()
+example_account.get_balance() # balance -30
+
+example_account.add_interest()
+example_account.deposit(80) # balance 50
+example_account.add_interest()
+
