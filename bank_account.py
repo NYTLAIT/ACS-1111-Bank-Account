@@ -22,20 +22,20 @@ class BankAccount:
             
     def deposit(self, amount):
         self.balance += amount
-        print(f'Amount deposited: ${amount} New Balance: ${self.balance}')
+        print(f'Amount deposited: ${amount} New Balance: ${round(self.balance, 2)}')
 
     def withdraw(self, amount):
         if amount > self.balance:
             self.balance -= amount
             self.balance -= 10
             print(f'Insufficient funds. Incured $10 overdraft fee')
-            print(f'Balance: {self.balance}')
+            print(f'Balance: {round(self.balance, 2)}')
         else: 
             self.balance -= amount
-            print(f'Amount deposited: ${amount} New Balance: ${self.balance}')
+            print(f'Amount deposited: ${amount} New Balance: ${round(self.balance, 2)}')
 
     def get_balance(self):
-        print(f'Balance: ${self.balance}')
+        print(f'Balance: ${round(self.balance, 2)}')
         return self.balance
     
     def add_interest(self):
@@ -51,21 +51,22 @@ class BankAccount:
         print(f'Account No.: {account_number_hidden}')
         print(f'Balance: ${round(self.balance, 2)}')
 
-# CHECK
-example_account = BankAccount('xamxam1')
-example_accounttoo = BankAccount('xamxam2')
+john_smith = BankAccount('John Smith')
+scarlett_johansson = BankAccount('Scarlett Johansson')
+jane_eyre = BankAccount('Jane Eyre')
 
-example_account.deposit(100) # balance 100
-example_account.deposit(50) # balance 150
 
-example_account.withdraw(25) # balance 125
-example_account.withdraw(5) # balance 120
-example_account.withdraw(140) # balance -30
+john_smith.deposit(100)
+john_smith.withdraw(120)
+scarlett_johansson.deposit(200)
+scarlett_johansson.get_balance()
+jane_eyre.deposit(300)
+jane_eyre.add_interest
 
-example_account.get_balance() # balance -30
-
-example_account.add_interest() # Get out of debt first
-example_account.deposit(80) # balance 50
-example_account.add_interest() # balance 50.04
-
-example_account.print_statement()
+mitchell_dudson = BankAccount('Mitchell Dudson')
+mitchell_dudson.deposit(400000)
+mitchell_dudson.print_statement()
+mitchell_dudson.add_interest()
+mitchell_dudson.print_statement()
+mitchell_dudson.withdraw(150)
+mitchell_dudson.print_statement()
