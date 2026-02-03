@@ -10,7 +10,9 @@ class BankAccount:
 
     def account_num_randomizer(self):
         '''
-        Generate a unique 8 digit numeric string. 
+        Generate a unique 8 digit numeric string.
+
+        :return number: unique to registered accounts 8 digit number
         '''
         # Create 8 digit number by looping through a random number from 0-9 using random.randint
         # and adding them together while a count gets added by 1 each loop -- loop stops when 
@@ -32,7 +34,7 @@ class BankAccount:
         Add an amount to BankAccount object balance and display amount and new balance.
         
         :param amount: Deposit amount -- amount added to balance
-        :type amount: int
+        :type amount: int float
         '''
         self.balance += amount
         print(f'Amount deposited: ${amount} New Balance: ${round(self.balance, 2)}')
@@ -49,11 +51,11 @@ class BankAccount:
         if amount > self.balance:
             self.balance -= amount
             self.balance -= 10
-            print(f'Insufficient funds. Inccured $10 overdraft fee')
+            print(f'Insufficient funds. Incured $10 overdraft fee')
             print(f'Balance: {round(self.balance, 2)}')
         else: 
             self.balance -= amount
-            print(f'Amount deposited: ${amount} New Balance: ${round(self.balance, 2)}')
+            print(f'Amount withdrawn: ${amount} New Balance: ${round(self.balance, 2)}')
 
     def get_balance(self):
         '''
@@ -95,7 +97,7 @@ john_smith.withdraw(120)
 scarlett_johansson.deposit(200)
 scarlett_johansson.get_balance()
 jane_eyre.deposit(300)
-jane_eyre.add_interest
+jane_eyre.add_interest()
 
 mitchell_dudson = BankAccount('Mitchell Dudson')
 mitchell_dudson.deposit(400000)
